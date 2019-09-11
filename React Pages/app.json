@@ -1,0 +1,26 @@
+{
+  "id": "11466d48-bcb4-420c-be39-001e51f879c7",
+  "name": "React Pages",
+  "publisher": "Red and Bundle",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "Dashboards for Business Central",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "Images/Main With Text.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "14.0.0.0",
+  "application": "14.0.0.0",
+  "idRanges": [
+    {
+      "from": 80000,
+      "to": 80149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Dashboards.com/help/",
+  "showMyCode": true,
+  "runtime": "3.2"
+}
