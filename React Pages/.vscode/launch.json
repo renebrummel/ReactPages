@@ -14,7 +14,7 @@
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
-            "startupObjectId": 30
+            "startupObjectId": 80001
         }
     ]
 }

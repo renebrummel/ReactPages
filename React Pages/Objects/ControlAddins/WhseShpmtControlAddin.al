@@ -1,9 +1,10 @@
-controladdin WhseShpmtControlAddin
+controladdin WhseShpmtControlAddinRED
 {
     Scripts =
         'https://unpkg.com/react@16/umd/react.development.js',
-        'https://unpkg.com/react-dom@16/umd/react-dom.development.js';
-    StartupScript = 'Objects/Scripts/warehouseShipment.js';
+        'https://unpkg.com/react-dom@16/umd/react-dom.development.js',
+        'https://renebrummel.github.io/src/warehouseShipmentFunction.js';
+    StartupScript = 'Objects/Scripts/start.js';
 
     StyleSheets = 'Objects/Css/warehouseShipment.css';
 

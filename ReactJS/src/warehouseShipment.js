@@ -8,7 +8,7 @@ class LikeButton extends React.Component {
 
   handleClick() {
     this.setState({ liked: true});
-    Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("HandleClick", []);
+    Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("HandleClick", [this.state]);
   }
 
   render() {

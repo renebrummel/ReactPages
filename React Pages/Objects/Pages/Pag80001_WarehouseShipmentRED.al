@@ -3,7 +3,7 @@ page 80001 "Warehouse Shipment RED"
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    // SourceTable = TableName;
+    SourceTable = "Warehouse Shipment Header";
 
     layout
     {
@@ -11,8 +11,8 @@ page 80001 "Warehouse Shipment RED"
         {
             group(ReactGroup)
             {
-                Caption = 'Dashboard';
-                usercontrol(ItemControlAddinRED; ItemControlAddinRED)
+                Caption = 'React';
+                usercontrol(WhseShpmtControlAddinRED; WhseShpmtControlAddinRED)
                 {
                     ApplicationArea = All;
 
@@ -21,12 +21,12 @@ page 80001 "Warehouse Shipment RED"
                         Data: JsonArray;
                     begin
                         ControlIsReady := true;
-                        CurrPage.ItemControlAddinRED.InitControls(Data);
+                        CurrPage.WhseShpmtControlAddinRED.InitControls(Data);
                     end;
 
-                    trigger HandleClick(Clicked: Text)
+                    trigger HandleClick(Clicked: JsonObject)
                     begin
-                        Message(Clicked);
+                        Message(Format(Clicked));
                     end;
                 }
             }
@@ -34,10 +34,8 @@ page 80001 "Warehouse Shipment RED"
     }
 
     procedure SetRecord(WarehouseShipmentHeader: Record "Warehouse Shipment Header")
-    var
-        myInt: Integer;
     begin
-
+        Rec := WarehouseShipmentHeader;
     end;
 
     var
