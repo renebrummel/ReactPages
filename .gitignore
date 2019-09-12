@@ -4,7 +4,6 @@
 **/.vscode/
 **/.alpackages/
 *.app
-.launch.json
 
 # dependencies
 **/node_modules/
