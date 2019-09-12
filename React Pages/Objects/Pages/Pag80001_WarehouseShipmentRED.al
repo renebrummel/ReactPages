@@ -17,11 +17,9 @@ page 80001 "Warehouse Shipment RED"
                     ApplicationArea = All;
 
                     trigger ControlReady()
-                    var
-                        Data: JsonArray;
                     begin
                         ControlIsReady := true;
-                        CurrPage.WhseShpmtControlAddinRED.InitControls(Data);
+                        InitControls();
                     end;
 
                     trigger HandleClick(Clicked: JsonObject)
@@ -36,6 +34,17 @@ page 80001 "Warehouse Shipment RED"
     procedure SetRecord(WarehouseShipmentHeader: Record "Warehouse Shipment Header")
     begin
         Rec := WarehouseShipmentHeader;
+    end;
+
+    local procedure InitControls()
+    var
+        Data: JsonArray;
+        DataObject: JsonObject;
+    begin
+        DataObject.Add(FieldCaption("No."), Format("No."));
+        Data.Add(DataObject);
+
+        CurrPage.WhseShpmtControlAddinRED.InitControls(Data);
     end;
 
     var
