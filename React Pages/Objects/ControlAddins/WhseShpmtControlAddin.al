@@ -3,7 +3,7 @@ controladdin WhseShpmtControlAddinRED
     Scripts =
         'https://unpkg.com/react@16/umd/react.development.js',
         'https://unpkg.com/react-dom@16/umd/react-dom.development.js',
-        'https://renebrummel.github.io/src/warehouseShipmentFunction.js';
+        'Objects/Scripts/warehouseShipmentFunction.js';
     StartupScript = 'Objects/Scripts/start.js';
 
     StyleSheets = 'Objects/Css/warehouseShipment.css';
@@ -17,9 +17,9 @@ controladdin WhseShpmtControlAddinRED
     MinimumWidth = 250;
 
     procedure InitControls(Data: JsonArray);
-    procedure ValidationResult(Object: JsonObject);
+    procedure ValidationResult(Object: JsonArray);
     event ControlReady();
-    event ValidateField(Object: JsonObject);
-    event UpdateObject(Object: JsonObject);
-    event HandleClick(Object: JsonObject);
+    event ValidateField(Object: JsonArray);
+    event HandleClick(Object: JsonArray);
+    event UpdateRecord(Object: JsonArray);
 }

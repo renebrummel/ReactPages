@@ -22,29 +22,58 @@ page 80001 "Warehouse Shipment RED"
                         InitControls();
                     end;
 
-                    trigger HandleClick(Clicked: JsonObject)
+                    trigger HandleClick(Clicked: JsonArray)
                     begin
                         Message(Format(Clicked));
+                    end;
+
+                    trigger UpdateRecord(Object: JsonArray)
+                    begin
+                        UpdateRecord(Object);
                     end;
                 }
             }
         }
     }
 
+    trigger OnOpenPage()
+    var
+        WarehouseShipmentHeader: Record "Warehouse Shipment Header";
+    begin
+        WarehouseShipmentHeader.SetRange(Status, Status::Open);
+        if WarehouseShipmentHeader.FindFirst() then
+            SetRecord(WarehouseShipmentHeader);
+    end;
+
     procedure SetRecord(WarehouseShipmentHeader: Record "Warehouse Shipment Header")
     begin
         Rec := WarehouseShipmentHeader;
     end;
 
+    local procedure UpdateRecord(Object: JsonArray)
+    begin
+    end;
+
     local procedure InitControls()
     var
-        Data: JsonArray;
+        DataArray: JsonArray;
         DataObject: JsonObject;
     begin
-        DataObject.Add(FieldCaption("No."), Format("No."));
-        Data.Add(DataObject);
+        DataObject.Add('fieldcaption', FieldCaption("No."));
+        DataObject.Add('fieldvalue', Format("No."));
+        DataArray.Add(DataObject);
+        Clear(DataObject);
+        DataObject.Add('fieldcaption', FieldCaption("Location Code"));
+        DataObject.Add('fieldvalue', Format("Location Code"));
+        DataArray.Add(DataObject);
+        Clear(DataObject);
+        DataObject.Add('fieldcaption', FieldCaption(Comment));
+        DataObject.Add('fieldvalue', Format(Comment));
+        DataArray.Add(DataObject);
+        Clear(DataObject);
 
-        CurrPage.WhseShpmtControlAddinRED.InitControls(Data);
+        // Message(Format(DataArray));
+        CurrPage.WhseShpmtControlAddinRED.InitControls(DataArray);
     end;
 
     var
