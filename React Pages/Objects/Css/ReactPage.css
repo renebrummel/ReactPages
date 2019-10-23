@@ -1,0 +1,103 @@
+#controlAddIn {
+    /* border: 2px solid red; */
+    background-color: lightgray;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#reactPage {
+    /* border: 1px solid black; */
+    overflow: auto;
+}
+
+.fieldsDiv {
+    width: 80%;
+    float:left;
+    /* border: 1px solid red; */
+    overflow: auto;
+}
+
+.actions {
+    /* border: 1px solid green; */
+    float: left;
+}
+
+.fieldsForm {
+    overflow: auto;
+    /* border: 1px solid purple; */
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.fieldsLabel {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45%;
+}
+
+.fieldvalue {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45%;
+}
+
+.fieldvalue.errorMessage {
+    color: red;
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.validated {
+    width: 10px;
+    height: 10px;
+    font-weight: bold;
+    font-size: 100%;
+    color: green;
+    background: green;
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    border: 3px solid green;
+    overflow: auto;
+}
+
+.error {
+    width: 10px;
+    height: 10px;
+    font-weight: bold;
+    font-size: 100%;
+    color: red;
+    background: red;
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    border: 3px solid red;
+    overflow: auto;
+}
+
+.errorMessage {
+    color: firebrick;
+}
+
+.action {
+    height: 100px;
+    width: 80px;
+    color: green;
+    float: left;
+}
